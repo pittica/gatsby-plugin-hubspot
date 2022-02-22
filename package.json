@@ -1,0 +1,56 @@
+{
+  "name": "@pittica/gatsby-plugin-hubspot",
+  "private": false,
+  "description": "HubSpot plugin for GatsbyJS.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lucio Benini",
+    "email": "info@pittica.com",
+    "url": "https://pittica.com"
+  },
+  "bugs": {
+    "url": "https://github.com/pittica/gatsby-plugin-hubspot/issues"
+  },
+  "deprecated": false,
+  "homepage": "https://github.com/pittica/gatsby-plugin-hubspot",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "hubspot"
+  ],
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.3",
+    "babel-preset-gatsby-package": "^2.7.0",
+    "cpx": "^1.5.0",
+    "prettier": "^2.5.1",
+    "react-scripts": "^5.0.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^3.0.0 || ^4.0.0"
+  },
+  "scripts": {
+    "test": "react-scripts test",
+    "build": "rimraf ./dist && mkdirp ./dist && babel src --out-dir dist --copy-files && cpx {package.json,README.md,LICENSE} ./dist"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pittica/gatsby-plugin-hubspot.git"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "config": {
+    "access": "public"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-gatsby-package"
+    ]
+  }
+}
