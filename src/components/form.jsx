@@ -1,7 +1,16 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import PropTypes from "prop-types"
 
-export default function Form({ region, portalId, formId, locale, className }) {
+import HubspotContext from "../context/hubspot-context"
+
+export default function Form(props) {
+  const context = useContext(HubspotContext)
+  const region = props.region || context.region
+  const portalId = props.portalId || context.portalId
+  const formId = props.formId || context.formId
+  const locale = props.locale || context.locale
+  const { className } = props
+
   useEffect(() => {
     if (typeof window.hbspt !== "undefined") {
       window.hbspt.forms.create({
@@ -28,10 +37,10 @@ export default function Form({ region, portalId, formId, locale, className }) {
 }
 
 Form.propTypes = {
-  region: PropTypes.string.isRequired,
-  portalId: PropTypes.string.isRequired,
-  formId: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
+  region: PropTypes.string,
+  portalId: PropTypes.string,
+  formId: PropTypes.string,
+  locale: PropTypes.string,
   className: PropTypes.string,
 }
 
